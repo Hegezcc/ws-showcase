@@ -1,0 +1,21 @@
+.thumbnail {
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid black;
+}
+
+.nav-item.active{
+    background: #c3e1c6;
+}
+.nav-item.active .thumbnail{
+    border: 2px solid #6984ac;
+}
+.main-frame{
+    margin-top: 20px;
+}
+
+html.a-fullscreen .a-canvas{
+    width: 100% !important;
+    height: 100% !important;
+    position: initial !important;
+}
