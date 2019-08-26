@@ -31,13 +31,19 @@
 
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar pt-4">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="#">
                             <img src="res/example.jpg" alt="Example" class="thumbnail">
                             Web technologies
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">
+                            <img src="res/example.jpg" alt="Example" class="thumbnail">
+                            Cooking
                         </a>
                     </li>
                 </ul>
@@ -64,6 +70,14 @@
                         <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>
                     </div>
                 </div>
+            </div>
+            <div style="width: 100%; height: 100%">
+                <a-scene>
+                    <a-sky src="res/example.jpg" rotation="0 -130 0"></a-sky>
+
+                    <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5"
+                            rotation="0 15 0"></a-text>
+                </a-scene>
             </div>
 
         </main>
