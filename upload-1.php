@@ -45,13 +45,11 @@ function uploadImage($image, $key)
     $target_file = $target_dir . basename($image[$key]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    if (isset($_POST["submit"])) {
-        $check = getimagesize($image[$key]["tmp_name"]);
-        if ($check !== false) {
-            $uploadOk = 1;
-        } else {
-            $uploadOk = 0;
-        }
+    $check = getimagesize($image[$key]["tmp_name"]);
+    if ($check !== false) {
+        $uploadOk = 1;
+    } else {
+        $uploadOk = 0;
     }
     if (file_exists($target_file)) {
         $uploadOk = 0;
