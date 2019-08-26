@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WorldSkills showcase</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar navbar-dark  bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">WorldSkill showcase</a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="upload.php">Upload</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar pt-4">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            <img src="res/example.jpg" alt="Example" class="thumbnail">
+                            Web technologies
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">
+                            <img src="res/example.jpg" alt="Example" class="thumbnail">
+                            Cooking
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="chartjs-size-monitor"
+                 style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                <div class="chartjs-size-monitor-expand"
+                     style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink"
+                     style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Upload</h1>
+            </div>
+            <div style="width: 100%;">
+                <form>
+                    <div class="form-group">
+                        <label for="titleInput">Title</label>
+                        <input type="text" class="form-control" id="titleInput" name="title" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <label for="descInput">Description</label>
+                        <textarea class="form-control" id="descInput" rows="3" name="desc"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUpload">Image upload</label>
+                        <input type="file" class="form-control-file" id="imageUpload" name="image">
+                    </div>
+                    <button id="add-tag" class="btn btn-secondary mb-2">Add Tag</button>
+                    <div class="tags-container">
+
+                    </div>
+                    <script>
+                        $("#add-tag").click(e => {
+                            e.preventDefault();
+                            console.log("ok");
+                            $(".tags-container").append(`
+                    <div>
+                        <div class="input-group mt-3 mb-1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Name</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Name" name="name[]">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Position</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Position" name="position[]">
+                        </div>
+                    </div>
+                            `);
+                        });
+                    </script>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
