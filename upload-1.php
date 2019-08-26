@@ -32,8 +32,9 @@ function addNewData($newData)
 {
     $data = file_get_contents('images.json');
     $data = (array)json_decode($data);
+    $id = count($data);
+    $newData['id'] = $id;
     $data[] = $newData;
-    print_r($data);
     file_put_contents('res/images.json', json_encode($data));
 }
 
