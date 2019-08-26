@@ -19,3 +19,10 @@ html.a-fullscreen .a-canvas{
     height: 100% !important;
     position: initial !important;
 }
+
+.fullscreen {
+    position: absolute;
+    z-index: 1000;
+    width: 100vw !important;
+    height: 100vh !important;
+}
